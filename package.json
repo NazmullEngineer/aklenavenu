@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "postinstall": "ng build --aot --target=production",
+    "postinstall": "ng build --aot",
     "index": "node index.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run index\" \"npm run client\"",

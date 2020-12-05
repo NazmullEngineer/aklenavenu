@@ -6,12 +6,14 @@ const path= require('path')
 
 var postMessageRoutes = require('./controllers/postMessageController')
 
-if(process.env.NODE_ENV=='production'){
+
+if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'))
-    app.get('*', (req,res)=>{
-        res.sendFile(path.resolve(__dirname,'client', 'build', 'index.html'))
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
     })
 }
+
 var app = express()
 app.use(bodyParser.json())
 app.use(cors({origin:'http://localhost:3000'}))
